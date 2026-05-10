@@ -1,4 +1,4 @@
-import s from './App.module.css'
+import s from './css/App.module.css'
 
 //import { Button } from './componets/Button'
 import { useState, useEffect, useRef} from "react";

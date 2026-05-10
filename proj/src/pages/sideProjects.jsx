@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import '../css/sideProjects.css'
+import '../css/sideProjects.module.css'
 
 export function SideProjects()
 {
