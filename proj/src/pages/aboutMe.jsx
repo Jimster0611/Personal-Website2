@@ -25,6 +25,7 @@ export function AboutMe()
                 </div>
                 
                 <Link to="/" className = {s.specLinks}>
+                    <span className={s.badge}>0</span>
                     Resume....... 
                 </Link>
 

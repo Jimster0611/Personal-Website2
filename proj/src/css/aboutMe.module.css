@@ -23,15 +23,20 @@
     gap: 12px; 
     width: 20vw;
 }
-
-/*
-    max-height: 60vh;   
-    overflow-y: auto;
-    overflow-x: visible; 
-.linksContainer::-webkit-scrollbar {
-    display: none;
+.badge {
+    position: absolute;
+    left: -8%;
+    background: white;
+    color: #0d1b6e;
+    font-family: 'Impact', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    padding: 2px 8px;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+    transition: background 0.2s, color 0.2s;
 }
-*/
+
+
 .listHeader {
     display: flex;
     flex-direction: column;
@@ -89,6 +94,11 @@
     transform: scaleX(0);
 }    
 
+.specLinks:hover .badge {
+    background: #0d1b6e;
+    color: white;
+}
+
 
 .specLinks:hover {
     color: black;
@@ -102,9 +112,20 @@
 }
 .specLinks:hover::before {
     background-color: white;
-
 }
-
 .specLinks:hover::after {
     transform: scaleX(1);
 }
+
+
+
+/*
+below is code for possible scroll, but scroll exits only vertically/horizontally
+need to make a code for a custom slanted scroll
+    max-height: 60vh;   
+    overflow-y: auto;
+    overflow-x: visible; 
+.linksContainer::-webkit-scrollbar {
+    display: none;
+}
+*/
