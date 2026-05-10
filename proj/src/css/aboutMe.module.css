@@ -20,8 +20,23 @@
     left: 5%;
     display: flex;      
     flex-direction: column;
-    gap: 12px;  
+    gap: 12px; 
+    width: 20vw;
 }
+.badge {
+    position: absolute;
+    left: -8%;
+    background: white;
+    color: #0d1b6e;
+    font-family: 'Impact', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    padding: 2px 8px;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+    transition: background 0.2s, color 0.2s;
+}
+
+
 .listHeader {
     display: flex;
     flex-direction: column;
@@ -53,35 +68,40 @@
         transform: rotate(-5deg);
     }
 }
-.specLinks::before { /* background texture*/
+.specLinks::before { 
     content: "";
     position: absolute;
     width: 120%;
     height: 100%;
     /*top_r,top_l,bott_r,bott_l */
-    clip-path: polygon(90% 0%, 0% 0%, 10% 100%, 100% 100%);
+    clip-path: polygon(95% 0%, 0% 0%, 5% 100%, 100% 100%);
     background-color: #0d1b6e;
     z-index: -5;
     left: -10%;
     transform: scaleX(1);
 }    
-/*
-.specLinks::after { 
+
+.specLinks::after {
     content: "";
     position: absolute;
-    width: 190%;
-    height: 240%;
-    clip-path: polygon(75% 0%, 0% 0%, 25% 100%, 100% 100%);
-    background-color: gray;
-    z-index: -2;
+    width: 120%;
+    height: 100%;
+    clip-path: polygon(95% 0%, 0% 0%, 5% 100%, 100% 100%);
+    background-color: red;
+    z-index: -6;
+    top:-8%;
+    left: -8%;
     transform: scaleX(0);
 }    
-    hopefully made changes in the brancjh
-    on the new branch
-    stuff n stuff
-*/
+
+.specLinks:hover .badge {
+    background: #0d1b6e;
+    color: white;
+}
+
+
 .specLinks:hover {
-    color: rgb(0, 163, 255);
+    color: black;
     font-size: 2.5rem;
     width: 150%;
     /*Below Chunk is to bug fix a gltichy hitbox  */
@@ -90,7 +110,22 @@
         transform: rotate(0); 
     }
 }
-
+.specLinks:hover::before {
+    background-color: white;
+}
 .specLinks:hover::after {
     transform: scaleX(1);
 }
+
+
+
+/*
+below is code for possible scroll, but scroll exits only vertically/horizontally
+need to make a code for a custom slanted scroll
+    max-height: 60vh;   
+    overflow-y: auto;
+    overflow-x: visible; 
+.linksContainer::-webkit-scrollbar {
+    display: none;
+}
+*/

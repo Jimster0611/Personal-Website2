@@ -20,27 +20,31 @@ export function AboutMe()
             <video src = {bgVideo1} autoPlay loop muted className = {s.bgVideo}/>
             {/*Below will be the link tree nav bar */}
             <div className = {s.linksContainer}>
-                <div className = {s.listHeader} style={{ transform: ' translate(-12%)' }}>
+                <div className = {s.listHeader} style={{ transform: ' translate(-8%)' }}>
                     LIST
                 </div>
                 
                 <Link to="/" className = {s.specLinks}>
+                    <span className={s.badge}>0</span>
                     Resume....... 
                 </Link>
 
-                <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(12%)' }}>
+                <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(8%)' }}>
+                    Side Projects
+                </Link>
+
+                <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(16%)' }}>
                     Side Projects
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(24%)' }}>
-                    Side Projects
-                </Link>
-
-                <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(36%)' }}>
                     stuff
                 </Link>
 
-                <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(48%)' }}>
+                <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(32%)' }}>
+                    About Me 
+                </Link>
+                <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(40%)' }}>
                     About Me 
                 </Link>
             </div>
