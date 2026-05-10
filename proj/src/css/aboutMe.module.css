@@ -79,17 +79,15 @@
 */
 .specLinks:hover {
     color: rgb(0, 163, 255);
-    font-size: 4rem;
-
+    font-size: 2.5rem;
+    width: 150%;
     /*Below Chunk is to bug fix a gltichy hitbox  */
     transform: scale(1.05);
     .text { 
         transform: rotate(0); 
     }
 }
-.specLinks:hover::before {
-    transform: scaleX(1);
-}
+
 .specLinks:hover::after {
     transform: scaleX(1);
 }
