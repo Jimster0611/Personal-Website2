@@ -3,26 +3,23 @@ import { Link } from "react-router-dom"
 import s from '../css/homeMenu.module.css'
 
 
-import bgVideo1 from "../assets/vids/mainMenuBG.mp4";
-import bgVideo2 from "../assets/vids/main1.mp4";
+import bgVideo from "../assets/vids/mainMenuBG.mp4";
+//import resume from "../assets/pics/Resume.pdf";
 
 export function HomeMenu()
 {
-    const selectedVideo = useMemo(() => {
-        const videos = [bgVideo1, bgVideo1];
-        //alter bgVideo1 to 2 once i've found a another good bgvid
-        return videos[Math.floor(Math.random() * videos.length)];
-    }, []);
+
     return (
         <div className = {s.main}>
-            <video src = {selectedVideo} autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo} autoPlay loop muted className = {s.bgVideo}/>
 
             <div className = {s.linksContainer}>
-                <Link to="/aboutme" 
-                    className = {s.specLinks} 
+                <a href= "/My_Resume.pdf"
+                    download ="Jimmy's Resume.pdf"
+                    className = {s.specLinks} target = "_blank"
                     style={{ transform: 'translate(-10%) rotate(-25deg) skewX(-15deg)', color: "lightskyblue"}}>
                     Resume 
-                </Link>
+                </a>
 
                 <a href="https://github.com/Jimster0611" 
                     className = {s.specLinks} target = "_blank" 
