@@ -18,23 +18,33 @@ export function HomeMenu()
             <video src = {selectedVideo} autoPlay loop muted className = {s.bgVideo}/>
 
             <div className = {s.linksContainer}>
-                <Link to="/" className = {s.specLinks} style={{ transform: 'translate(25%) rotate(-5deg) skewX(-15deg)' }}>
+                <Link to="/aboutme" 
+                    className = {s.specLinks} 
+                    style={{ transform: 'translate(-10%) rotate(-25deg) skewX(-15deg)', color: "lightskyblue"}}>
                     Resume 
                 </Link>
 
-                <a href="https://github.com/Jimster0611" className = {s.specLinks} target = "_blank" style={{ transform: 'translate(-25%) rotate(5deg) skewX(-15deg)' }}>
+                <a href="https://github.com/Jimster0611" 
+                    className = {s.specLinks} target = "_blank" 
+                    style={{ transform: 'translate(0%) rotate(-15deg) skewX(-15deg)' }}>
                     GitHub
                 </a>
 
-                <a href="http://www.linkedin.com/in/jimmy-chau123" className = {s.specLinks} target = "_blank" style={{ transform: ' translate(25%) rotate(-5deg) skewX(-15deg)' }}>
+                <a href="http://www.linkedin.com/in/jimmy-chau123" 
+                    className = {s.specLinks} target = "_blank" 
+                    style={{ transform: ' translate(0%) rotate(-8deg) skewX(-15deg)', color: "lightskyblue" }}>
                     Linkedln
                 </a>
 
-                <Link to="/aboutme" className = {s.specLinks} style={{ transform: 'translate(-25%) rotate(5deg) skewX(-15deg)' }}>
+                <Link to="/aboutme" 
+                    className = {s.specLinks} 
+                    style={{ transform: 'translate(0%) rotate(4deg) skewX(-15deg)' }}>
                     Side Projects
                 </Link>
 
-                <Link to="/aboutme" className = {s.specLinks} style={{ transform: 'translate(25%) rotate(-5deg) skewX(-15deg)' }}>
+                <Link to="/aboutme" 
+                    className = {s.specLinks} 
+                    style={{ transform: 'translate(0%) rotate(8deg) skewX(-15deg)', color: "lightskyblue" }}>
                     About Me 
                 </Link>
             </div>
