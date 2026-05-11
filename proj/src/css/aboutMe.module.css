@@ -52,7 +52,7 @@
     font-family: 'Impact', sans-serif;
     font-style: italic;
     font-size: 2rem;
-    color: cyan;
+    color: lightskyblue;
     text-decoration: none;
     text-align: center;
     transition: color 0.2s, transform 0.2s; /* Ensures the hover is smooth */
@@ -87,7 +87,7 @@
     width: 120%;
     height: 100%;
     clip-path: polygon(95% 0%, 0% 0%, 5% 100%, 100% 100%);
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.959);
     z-index: -6;
     top:-8%;
     left: -8%;
@@ -101,7 +101,7 @@
 
 
 .specLinks:hover {
-    color: black;
+    color: rgba(0, 0, 0, 0.696);
     font-size: 2.5rem;
     width: 110%;
     /*Below Chunk is to bug fix a gltichy hitbox  */

@@ -98,7 +98,6 @@
 .specLinks:hover::after {
     transform: scale(1.3);
 }
-
 /*
 div {
     cursor:not-allowed;}
