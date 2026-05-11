@@ -18,23 +18,23 @@ export function HomeMenu()
             <video src = {selectedVideo} autoPlay loop muted className = {s.bgVideo}/>
 
             <div className = {s.linksContainer}>
-                <Link to="/" className = {s.specLinks} style={{ transform: 'translate(25%) rotate(-5deg) skewX(-15deg)' }}>
+                <Link to="/" className = {s.specLinks} style={{ transform: 'translate(0%) rotate(-25deg) skewX(15deg)' }}>
                     Resume 
                 </Link>
 
-                <a href="https://github.com/Jimster0611" className = {s.specLinks} target = "_blank" style={{ transform: 'translate(-25%) rotate(5deg) skewX(-15deg)' }}>
+                <a href="https://github.com/Jimster0611" className = {s.specLinks} target = "_blank" style={{ transform: 'translate(0%) rotate(-25deg) skewX(15deg)' }}>
                     GitHub
                 </a>
 
-                <a href="http://www.linkedin.com/in/jimmy-chau123" className = {s.specLinks} target = "_blank" style={{ transform: ' translate(25%) rotate(-5deg) skewX(-15deg)' }}>
+                <a href="http://www.linkedin.com/in/jimmy-chau123" className = {s.specLinks} target = "_blank" style={{ transform: 'translate(0%) rotate(-25deg) skewX(15deg)' }}>
                     Linkedln
                 </a>
 
-                <Link to="/aboutme" className = {s.specLinks} style={{ transform: 'translate(-25%) rotate(5deg) skewX(-15deg)' }}>
+                <Link to="/aboutme" className = {s.specLinks} style={{ transform: 'translate(0%) rotate(-25deg) skewX(15deg)' }}>
                     Side Projects
                 </Link>
 
-                <Link to="/aboutme" className = {s.specLinks} style={{ transform: 'translate(25%) rotate(-5deg) skewX(-15deg)' }}>
+                <Link to="/aboutme" className = {s.specLinks} style={{ transform: 'translate(0%) rotate(-25deg) skewX(15deg)' }}>
                     About Me 
                 </Link>
             </div>
