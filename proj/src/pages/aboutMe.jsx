@@ -25,27 +25,33 @@ export function AboutMe()
                 </div>
                 
                 <Link to="/" className = {s.specLinks}>
-                    <span className={s.badge}>0</span>
-                    Resume....... 
+                    <span className={s.badge}>I</span>
+                    L1 
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(8%)' }}>
-                    Side Projects
+                    <span className={s.badge}>II</span>
+                    L2
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(16%)' }}>
-                    Side Projects
+                    <span className={s.badge}>III</span>
+                    L3
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(24%)' }}>
-                    stuff
+                    <span className={s.badge}>IV</span>
+                    L4
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(32%)' }}>
-                    About Me 
+                    <span className={s.badge}>V</span>
+                    L5 
                 </Link>
+
                 <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(40%)' }}>
-                    About Me 
+                    <span className={s.badge}>VI</span>
+                    L6 
                 </Link>
             </div>
         </div>
