@@ -26,12 +26,12 @@ export function AboutMe()
                 
                 <Link to="/" className = {s.specLinks}>
                     <span className={s.badge}>I</span>
-                    L1 
+                    Gym Progress 
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(8%)' }}>
                     <span className={s.badge}>II</span>
-                    L2
+                    Yippy Yappff
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(16%)' }}>

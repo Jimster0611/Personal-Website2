@@ -13,10 +13,10 @@
     left: 10px;
     z-index: 1000;
     position: fixed;
-    color: white;
+    color: rgba(255, 255, 255, 0.489);
     padding: 1em, 2em;
     width: 10%;
-    background-color: #ade6e6;
+    background-color: #4975e466;
 
     border-radius: 1000px;
     
