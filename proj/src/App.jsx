@@ -9,6 +9,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { AboutMe } from './pages/aboutMe'
 import { HomeMenu } from './pages/homeMenu'
 import { SideProjects } from './pages/sideProjects'
+import { Journal } from './pages/journal'
 
 function App() {
     const [toggled, setToggled] = useState(false);
@@ -30,6 +31,7 @@ function App() {
                 <Route path = "/" element = {<HomeMenu/>}/>
                 <Route path = "/aboutme" element = {<AboutMe/>}/>
                 <Route path = "/sideprojects" element = {<SideProjects/>}/>
+                <Route path="/journal" element={<Journal/>}/>   
             </Routes>
         </Router>
     )

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import s from '../css/aboutMe.module.css'
 //import useSound from 'use-sound';
 
-import bgVideo1 from "../assets/vids/main1.mp4";
+import bgVideo1 from "../assets/vids/aboutmeBG.mp4";
 import hoverSFX from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
 
 
@@ -24,7 +24,7 @@ export function AboutMe()
                     LIST
                 </div>
                 
-                <Link to="/" className = {s.specLinks}>
+                <Link to="/journal" className = {s.specLinks}>
                     <span className={s.badge}>I</span>
                     Journal 
                 </Link>
