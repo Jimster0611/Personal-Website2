@@ -32,8 +32,8 @@
     left: -5%;
     top: 40%;
     transform: translateY(-50%) rotate(20deg) !important;
-    background: lightskyblue !important; 
-    color: lightskyblue !important;
+    background: lightskyblue;
+    color: lightskyblue; 
     font-family: 'Impact', sans-serif !important;
     font-style: normal !important;
     font-size: 1rem;
@@ -115,14 +115,19 @@
     left: -8%;
     transform: scaleX(0);
 }    
-.specLinks:hover.badge {
-    background: #0d1b6e;
-    color: white;
+.specLinks:hover .badge {
+    background: gray;
+    color: gray;
     transform: scale(1.05);
     .text { 
         transform: rotate(0); 
     }
 }
+.specLinks:hover .badge::before {
+    background: white;
+    transform: scale(0.8); /* keep your original scale, or change it */
+}
+
 .specLinks:hover {
     color: rgba(0, 0, 0, 0.696);
     font-size: 2.5rem;

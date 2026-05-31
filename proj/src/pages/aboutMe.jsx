@@ -26,17 +26,17 @@ export function AboutMe()
                 
                 <Link to="/" className = {s.specLinks}>
                     <span className={s.badge}>I</span>
-                    Gym Progress 
+                    Journal 
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(8%)' }}>
                     <span className={s.badge}>II</span>
-                    Yippy Yappff
+                    Gym Progress
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(16%)' }}>
                     <span className={s.badge}>III</span>
-                    L3
+                    Fashion
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(24%)' }}>
@@ -46,12 +46,21 @@ export function AboutMe()
 
                 <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(32%)' }}>
                     <span className={s.badge}>V</span>
-                    L5 
+                    Easter Egg
                 </Link>
 
+                {/*
+
+                for the hidden easter egg, could hide some cool encryption somwhere in the code or log
+                for other pple who wants to find it, also offering 3 hints
+
+                for the random rants
+                format them in a cliar obscur expedition journal style
+                Journal - 
+                */}
                 <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(40%)' }}>
                     <span className={s.badge}>VI</span>
-                    L6 
+                    Guest Book
                 </Link>
             </div>
         </div>
