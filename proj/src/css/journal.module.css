@@ -4,8 +4,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* Keeps the video aspect ratio perfect */
-    z-index: -10; /* Keeps it behind your text */
+    object-fit: cover;
+    z-index: -10; 
 }
 
 
@@ -32,7 +32,7 @@
     display: grid;      
     grid-template-columns: repeat(4, 60px);
     gap: 2px; 
-    direction: ltr;  /* resets everything inside back to normal */
+    direction: ltr;
 }
 
 .button {

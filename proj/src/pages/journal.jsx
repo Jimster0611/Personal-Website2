@@ -20,7 +20,7 @@ const ENTRIES = {
 
 export function Journal()
 {
-    const [selected, setSelected] = useState("verso") // default to verso
+    const [selected, setSelected] = useState("0") 
 
     return (
         <div className = {s.main}>
