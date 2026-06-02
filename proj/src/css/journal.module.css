@@ -13,7 +13,7 @@
     position: absolute;
     top: 20%;
     left: 5%;
-    max-height: 60vh;
+    max-height: 59.5vh;
     overflow-y: auto;
     overflow-x: hidden;
     direction: rtl;  /* scrollbar on the left */
@@ -40,15 +40,21 @@
     color: #c45e0a;             
     font-family: 'Impact', sans-serif !important;
     font-style: normal !important;
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding: 2px 8px;
     border-radius: 8px; 
+    border-color: #c45e0a;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
     width: 60px;
     height: 60px;
     align-items: center;
     justify-content: center;
 }
+.button:hover {
+    color: #c45e0ac2;             
+    font-size: 1.8rem;
+}
+
 .journalPanel {
     position: absolute;
     top: 20%;

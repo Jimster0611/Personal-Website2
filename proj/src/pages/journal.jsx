@@ -6,9 +6,9 @@ import bgVideo2 from "../assets/vids/JournalBg2.mp4";
 
 const ENTRIES = {
   0: "The Beginning.",
-  1: "Journal - Verso\n\nParagraph one...\n\nParagraph two...",
-  2: "Journal - Aline\n\nParagraph one...",
-  3: "Journal - Renoir\n\nParagraph one...",
+  1: "smth smth day 1",
+  2: "smth smth text for day 2",
+  3: "Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...Journal - Renoir\nay 3 text and stuff one...",
   4: "Journal - Unknown\n\nParagraph one...",
   5: "Journal - Unknown\n\nParagraph one...",
   6: "Journal - Unknown\n\nParagraph one...",
