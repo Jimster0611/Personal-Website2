@@ -2,12 +2,20 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import s from '../css/journal.module.css'
 import bgVideo from "../assets/vids/journalBG.mp4";
+import bgVideo2 from "../assets/vids/JournalBg2.mp4";
 
 const ENTRIES = {
-  verso: "Journal - Verso\n\nParagraph one...\n\nParagraph two...",
-  aline: "Journal - Aline\n\nParagraph one...",
-  renoir: "Journal - Renoir\n\nParagraph one...",
-  unknown: "Journal - Unknown\n\nParagraph one...",
+  0: "The Beginning.",
+  1: "Journal - Verso\n\nParagraph one...\n\nParagraph two...",
+  2: "Journal - Aline\n\nParagraph one...",
+  3: "Journal - Renoir\n\nParagraph one...",
+  4: "Journal - Unknown\n\nParagraph one...",
+  5: "Journal - Unknown\n\nParagraph one...",
+  6: "Journal - Unknown\n\nParagraph one...",
+  7: "Journal - Unknown\n\nParagraph one...",
+  8: "Journal - Unknown\n\nParagraph one...",
+  9: "Journal - Unknown\n\nParagraph one...",
+  9999: "The End?",
 }
 
 export function Journal()
@@ -16,20 +24,20 @@ export function Journal()
 
     return (
         <div className = {s.main}>
-            <video src = {bgVideo} autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo2} autoPlay loop muted className = {s.bgVideo}/>
 
-            <div className = {s.buttonsContainer}>
-                <button className={s.button} onClick={() => setSelected("verso")}>Verso</button>
-                <button className={s.button} onClick={() => setSelected("aline")}>Aline</button>
-                <button className={s.button} onClick={() => setSelected("renoir")}>Renoir</button>
-                <button className={s.button} onClick={() => setSelected("renoir")}>Renoir</button>
-                <button className={s.button} onClick={() => setSelected("renoir")}>Renoir</button>
-                <button className={s.button} onClick={() => setSelected("renoir")}>Renoir</button>
-                <button className={s.button} onClick={() => setSelected("renoir")}>Renoir</button>
-                <button className={s.button} onClick={() => setSelected("renoir")}>Renoir</button>
-
+            {/*Below chunk is our buttons section to the left of screen*/}
+            <div className={s.buttonsWrapper}>
+                <div className={s.buttonsContainer}>
+                    {Array.from({ length: 101 }, (_, i) => (
+                        <button key={i} className={s.button} onClick={() => setSelected(String(i))}>
+                            {i}
+                        </button>
+                    ))}
+                </div>
             </div>
 
+            {/*Below chunk is our text section to the right of screen*/}
             <div className={s.journalPanel}>
                  <p>{ENTRIES[selected]}</p>
             </div>
