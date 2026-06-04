@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import s from '../css/journal.module.css'
-import bgVideo from "../assets/vids/journalBG.mp4";
 import bgVideo2 from "../assets/vids/JournalBg2.mp4";
 
 import BackButton from '../componets/backButton'
