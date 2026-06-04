@@ -33,7 +33,7 @@ export function HomeMenu()
                     Linkedln
                 </a>
 
-                <Link to="/aboutme" 
+                <Link to="/sideprojects" 
                     className = {s.specLinks} 
                     style={{ transform: 'translate(0%) rotate(4deg) skewX(-15deg)' }}>
                     Side Projects

@@ -4,6 +4,7 @@ import s from '../css/aboutMe.module.css'
 
 import bgVideo1 from "../assets/vids/aboutmeBG.mp4";
 import hoverSFX from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
+import BackButton from '../componets/backButton'
 
 
 /*
@@ -41,7 +42,7 @@ export function AboutMe()
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(24%)' }}>
                     <span className={s.badge}>IV</span>
-                    L4
+                    Guest Book
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(32%)' }}>
@@ -60,8 +61,10 @@ export function AboutMe()
                 */}
                 <Link to="/aboutme" className = {s.specLinks}style={{ transform: ' translate(40%)' }}>
                     <span className={s.badge}>VI</span>
-                    Guest Book
+                    Credits
                 </Link>
+
+                <BackButton to="/" />
             </div>
         </div>
 

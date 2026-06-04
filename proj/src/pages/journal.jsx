@@ -4,6 +4,8 @@ import s from '../css/journal.module.css'
 import bgVideo from "../assets/vids/journalBG.mp4";
 import bgVideo2 from "../assets/vids/JournalBg2.mp4";
 
+import BackButton from '../componets/backButton'
+
 const ENTRIES = {
   0: "The Beginning.",
   1: "smth smth day 1",
@@ -42,6 +44,7 @@ export function Journal()
                  <p>{ENTRIES[selected]}</p>
             </div>
 
+            <BackButton to="/aboutme" />
         </div>
 
     )
