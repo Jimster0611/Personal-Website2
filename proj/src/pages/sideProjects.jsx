@@ -28,7 +28,7 @@ export function SideProjects()
     const playHoverSound = () => {
         if (hoverAudioRef.current) {
             hoverAudioRef.current.currentTime = 0; // Rewind to start so fast hovering works
-            hoverAudioRef.current.volume = 0.5;     // Adjust volume (0.0 to 1.0) to not blast ears
+            hoverAudioRef.current.volume = 1.0;     // Adjust volume (0.0 to 1.0) to not blast ears
             hoverAudioRef.current.play().catch(err => {
                 // Audio play can occasionally be blocked by browsers if user hasn't clicked anything yet
                 console.log("Audio play blocked until user interaction.");
@@ -43,7 +43,7 @@ export function SideProjects()
     const playClickSound = () => {
             if (clickAudioRef.current) {
                 clickAudioRef.current.currentTime = 0;
-                clickAudioRef.current.volume = 0.6; 
+                clickAudioRef.current.volume = 1.0; 
                 clickAudioRef.current.play().catch(err => console.log("Click audio blocked"));
             }
         }
