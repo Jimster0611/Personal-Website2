@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
-import '../css/sideProjects.module.css'
+import { useState, useRef } from "react"
 import s from '../css/sideProjects.module.css'
 import BackButton from '../componets/backButton'
 import bgVideo from "../assets/vids/sideProjBG3.mp4";
+
+import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
+import clickSfx from "../assets/audio/clickSelectionsfx.mp3"; 
 
 const previews = {
   proj_1:   { title: "Personal Website",          
@@ -22,6 +24,30 @@ const previews = {
 export function SideProjects()
 {
     const [hovered, setHovered] = useState(null)
+    const hoverAudioRef = useRef(new Audio(hoverSfx));
+    const playHoverSound = () => {
+        if (hoverAudioRef.current) {
+            hoverAudioRef.current.currentTime = 0; // Rewind to start so fast hovering works
+            hoverAudioRef.current.volume = 0.5;     // Adjust volume (0.0 to 1.0) to not blast ears
+            hoverAudioRef.current.play().catch(err => {
+                // Audio play can occasionally be blocked by browsers if user hasn't clicked anything yet
+                console.log("Audio play blocked until user interaction.");
+            });
+        }
+    }
+
+    const handleMouseEnter = (projKey) => {
+        setHovered(projKey);
+        playHoverSound(); 
+    }
+    const playClickSound = () => {
+            if (clickAudioRef.current) {
+                clickAudioRef.current.currentTime = 0;
+                clickAudioRef.current.volume = 0.6; 
+                clickAudioRef.current.play().catch(err => console.log("Click audio blocked"));
+            }
+        }
+    const clickAudioRef = useRef(new Audio(clickSfx)); 
 
     return (
         <div>
@@ -34,31 +60,35 @@ export function SideProjects()
                 </div>
                 
                 <Link to="/journal" className = {s.specLinks}
-                    onMouseEnter={() => setHovered('proj_1')}
-                    onMouseLeave={() => setHovered(null)}>
+                    onMouseEnter={() => handleMouseEnter('proj_1')}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={playClickSound}>
                     <span className={s.badge}>I</span>
 
                     Personal Website 
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(8%)' }}
-                    onMouseEnter={() => setHovered('proj_2')}
-                    onMouseLeave={() => setHovered(null)}>
+                    onMouseEnter={() => handleMouseEnter('proj_2')}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={playClickSound}>
                     <span className={s.badge}>II</span>
 
                     3d Jave Shooter
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(16%)' }}
-                    onMouseEnter={() => setHovered('proj_3')}
-                    onMouseLeave={() => setHovered(null)}>
+                    onMouseEnter={() => handleMouseEnter('proj_3')}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={playClickSound}>
                     <span className={s.badge}>III</span>
                     Fashion
                 </Link>
 
                 <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(24%)' }}
-                    onMouseEnter={() => setHovered('proj_4')}
-                    onMouseLeave={() => setHovered(null)}>
+                    onMouseEnter={() => handleMouseEnter('proj_4')}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={playClickSound}>
                     <span className={s.badge}>IV</span>
                     Guest Book
                 </Link>
