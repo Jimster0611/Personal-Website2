@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import s from '../css/journal.module.css'
 import bgVideo2 from "../assets/vids/JournalBg2.mp4";
 
 import BackButton from '../componets/backButton'
+import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
+import clickSfx from "../assets/audio/clickSelectionsfx.mp3"; 
 
 const ENTRIES = {
   0: "The Beginning.",
@@ -22,7 +24,34 @@ const ENTRIES = {
 export function Journal()
 {
     const [selected, setSelected] = useState("0") 
+    const [hovered, setHovered] = useState(null)
+    
+    const hoverAudioRef = useRef(new Audio(hoverSfx));
+    const clickAudioRef = useRef(new Audio(clickSfx)); 
 
+    const playHoverSound = () => {
+        if (hoverAudioRef.current) {
+            hoverAudioRef.current.currentTime = 0; 
+            hoverAudioRef.current.volume = 1.0;     
+            hoverAudioRef.current.play().catch(err => {
+                console.log("Audio play blocked until user interaction.");
+            });
+        }
+    }
+
+    const handleMouseEnter = (projKey) => {
+        setHovered(projKey);
+        playHoverSound(); 
+    }
+
+    const playClickSound = () => {
+        if (clickAudioRef.current) {
+            clickAudioRef.current.currentTime = 0;
+            clickAudioRef.current.volume = 1.0; 
+            clickAudioRef.current.play().catch(err => console.log("Click audio blocked"));
+        }
+    }
+        
     return (
         <div className = {s.main}>
             <video src = {bgVideo2} autoPlay loop muted className = {s.bgVideo}/>
@@ -31,7 +60,16 @@ export function Journal()
             <div className={s.buttonsWrapper}>
                 <div className={s.buttonsContainer}>
                     {Array.from({ length: 101 }, (_, i) => (
-                        <button key={i} className={s.button} onClick={() => setSelected(String(i))}>
+                        <button 
+                            key={i} 
+                            className={s.button} 
+                            onMouseEnter={() => handleMouseEnter(String(i))}
+                            onMouseLeave={() => setHovered(null)}
+                            onClick={() => {
+                                setSelected(String(i));
+                                playClickSound();
+                            }}
+                        >
                             {i}
                         </button>
                     ))}
@@ -40,11 +78,10 @@ export function Journal()
 
             {/*Below chunk is our text section to the right of screen*/}
             <div className={s.journalPanel}>
-                 <p>{ENTRIES[selected]}</p>
+                 <p>{ENTRIES[selected] || "No journal record found for this entry point."}</p>
             </div>
 
             <BackButton to="/aboutme" />
         </div>
-
     )
 }
