@@ -8,4 +8,183 @@
     z-index: -10; 
 }
 
+.linksContainer {
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    display: flex;      
+    flex-direction: column;
+    gap: 12px; 
+    width: 20vw;
+}
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    left: -5%;
+    top: 40%;
+    transform: translateY(-50%) rotate(20deg) !important;
+    background: lightskyblue;
+    color: lightskyblue; 
+    font-family: 'Impact', sans-serif !important;
+    font-style: normal !important;
+    font-size: 1rem;
+    padding: 2px 8px;
+    width: 23px;
+    height: 40px;
+    border-radius: 1px; 
+    z-index: 2;
+    isolation: isolate; 
+    text-align: center !important;
+}
+
+.badge::before {
+    content: "";
+    position: absolute; 
+    left: 0%;
+    top: 0%;     
+    width: 100%;
+    height: 100%;
+    border-radius: 1px; 
+    background-color: #051a9edc;
+    z-index: -3;    
+    transform-origin: center;
+    transform: scale(0.8);    
+}
+.listHeader {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Impact', sans-serif;
+    font-style: italic;
+    font-size: 3.5rem;
+    color: lightskyblue; 
+    text-decoration: none;
+}
+.specLinks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Impact', sans-serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: lightskyblue;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.2s, transform 0.2s; /* Ensures the hover is smooth */
+
+    cursor: pointer;
+    width: 120%; 
+
+    /*Below Chunk is to bug fix a gltichy hitbox  */
+    transform: scale(1.0);
+    transition: transform 0.2s;
+    .text {
+        transition: transform 0.2s;
+        transform: rotate(-5deg);
+    }
+}
+.specLinks::before { 
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    /*top_r,top_l,bott_r,bott_l */
+    clip-path: polygon(95% 0%, 0% 0%, 5% 100%, 100% 100%);
+    background-color: #091a88c0;
+    z-index: -5;
+    left: -10%;
+    transform: scaleX(1);
+}    
+.specLinks::after {
+    content: "";
+    position: absolute;
+    width: 125%;
+    height: 110%;
+    clip-path: polygon(95% 0%, 0% 0%, 5% 100%, 100% 100%);
+    background-color: rgba(255, 0, 0, 0.959);
+    z-index: -6;
+    top:-10%;
+    left: -11%;
+    transform: scaleX(0);
+}    
+.specLinks:hover .badge {
+    background: gray;
+    color: gray;
+    transform: scale(1.05);
+    .text { 
+        transform: rotate(0); 
+    }
+}
+.specLinks:hover .badge::before {
+    background: white;
+    transform: scale(0.8); /* keep your original scale, or change it */
+}
+
+.specLinks:hover {
+    color: rgba(0, 0, 0, 0.696);
+    font-size: 2.5rem;
+    width: 130%;
+    /*Below Chunk is to bug fix a gltichy hitbox  */
+    transform: scale(1.05);
+    .text { 
+        transform: rotate(0); 
+    }
+}
+.specLinks:hover::before {
+    background-color: white;
+}
+.specLinks:hover::after {
+    transform: scaleX(1);
+}
+
+
+.previewPanel {
+    position: fixed;
+    font-family: 'Impact', sans-serif;
+    font-style: italic;
+    right: -200%; /*loaded but just out of screen, may cause some gltihcy idk*/
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40vw;
+    padding: 2% 3%;
+    transition: right 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+
+    background-color: #0710489a;
+    backdrop-filter: blur(10px);
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.previewVisible {
+    right: 0;
+}
+
+.previewTitle {
+    font-size: 2rem;
+    text-align: center;
+    color: lightskyblue;
+    text-transform: uppercase;
+}
+
+.previewDesc {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin: 0;
+
+}
+
+
+/*
+below is code for possible scroll, but scroll exits only vertically/horizontally
+need to make a code for a custom slanted scroll
+    max-height: 60vh;   
+    overflow-y: auto;
+    overflow-x: visible; 
+.linksContainer::-webkit-scrollbar {
+    display: none;
+}
+*/
 /* gotta have code for position of background video ehre*/
