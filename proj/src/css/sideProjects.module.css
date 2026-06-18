@@ -120,7 +120,7 @@
 }
 .specLinks:hover .badge::before {
     background: white;
-    transform: scale(0.8); /* keep your original scale, or change it */
+    transform: scale(0.8); 
 }
 
 .specLinks:hover {
