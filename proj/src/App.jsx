@@ -11,6 +11,7 @@ import { AboutMe } from './pages/aboutMe'
 import { HomeMenu } from './pages/homeMenu'
 import { SideProjects } from './pages/sideProjects'
 import { Journal } from './pages/journal'
+import { GuestBook } from './pages/guestBook'
 
 function App() {
     const [toggled, setToggled] = useState(false);
@@ -59,7 +60,8 @@ function App() {
                 <Route path = "/" element = {<HomeMenu/>}/>
                 <Route path = "/aboutme" element = {<AboutMe/>}/>
                 <Route path = "/sideprojects" element = {<SideProjects/>}/>
-                <Route path="/journal" element={<Journal/>}/>   
+                <Route path="/journal" element={<Journal/>}/> 
+                <Route path="/guestBook" element={<GuestBook/>}/> 
             </Routes>
         </Router>
     )

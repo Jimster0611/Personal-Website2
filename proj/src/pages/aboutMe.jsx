@@ -70,7 +70,7 @@ export function AboutMe()
                     Fashion
                 </Link>
 
-                <Link to="/aboutme" className = {s.specLinks} style={{ transform: ' translate(24%)' }}
+                <Link to="/guestBook" className = {s.specLinks} style={{ transform: ' translate(24%)' }}
                     onMouseEnter={() => handleMouseEnter('guestBook')} 
                     onClick={playClickSound}>
                     <span className={s.badge}>IV</span>
