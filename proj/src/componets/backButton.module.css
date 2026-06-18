@@ -1,11 +1,11 @@
 .backButton {
-    bottom: 20px;
-    right: 10px;
+    bottom: 2.5vh;
+    right: 1vw;
     z-index: 1000;
     position: fixed;
     color: rgba(255, 255, 255, 0.489);
-    padding: 1em, 2em;
-    width: 10%;
+    padding: 1vw, 2vh;
+    width: 12vw;
     background-color: #4975e466;
 
     border-radius: 1000px;
@@ -33,7 +33,7 @@
   border: 1px solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
   outline-color: rgba(255, 255, 255, 0);
-  outline-offset: 15px;
+  outline-offset: 1.5vw;
   text-shadow: 1px 1px 2px #427388; 
   background-color: blue;
 }	
