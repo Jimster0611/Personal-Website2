@@ -10,11 +10,11 @@
 
 .linksContainer {
     position: absolute;
-    top: 20%;
+    top: 20vh;
     left: 3%;
     display: flex;      
     flex-direction: column;
-    gap: 12px; 
+    gap: 1.5vh; 
     width: 20vw;
 }
 .badge {
@@ -30,10 +30,10 @@
     color: lightskyblue; 
     font-family: 'Impact', sans-serif !important;
     font-style: normal !important;
-    font-size: 1rem;
+    font-size: 0.9vw;
     padding: 2px 8px;
-    width: 23px;
-    height: 40px;
+    width: 1.6vw;
+    height: 4.5vh;
     border-radius: 1px; 
     z-index: 2;
     isolation: isolate; 
@@ -58,7 +58,7 @@
     flex-direction: column;
     font-family: 'Impact', sans-serif;
     font-style: italic;
-    font-size: 3.5rem;
+    font-size: 3.5vw;
     color: lightskyblue; 
     text-decoration: none;
 }
@@ -68,7 +68,7 @@
     flex-direction: column;
     font-family: 'Impact', sans-serif;
     font-style: italic;
-    font-size: 2rem;
+    font-size: 2vw;
     color: lightskyblue;
     text-decoration: none;
     text-align: center;
@@ -124,13 +124,8 @@
 
 .specLinks:hover {
     color: rgba(0, 0, 0, 0.696);
-    font-size: 2.5rem;
-    width: 130%;
     /*Below Chunk is to bug fix a gltichy hitbox  */
-    transform: scale(1.05);
-    .text { 
-        transform: rotate(0); 
-    }
+    transform: scale(1.08);
 }
 .specLinks:hover::before {
     background-color: white;
@@ -162,14 +157,14 @@
 }
 
 .previewTitle {
-    font-size: 2rem;
+    font-size: 2vw;
     text-align: center;
     color: lightskyblue;
     text-transform: uppercase;
 }
 
 .previewDesc {
-    font-size: 1.3rem;
+    font-size: 1.2vw;
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.8;
     margin: 0;
