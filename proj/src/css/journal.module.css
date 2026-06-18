@@ -67,6 +67,10 @@
     color:aliceblue;
     background-color: #416ddd90;
 
+    font-family: 'Impact', sans-serif !important;
+    font-style: normal !important;
+    font-size: 1.4vw;
+
     max-height: 60vh;
     overflow-y: auto;
     overflow-x: hidden;
