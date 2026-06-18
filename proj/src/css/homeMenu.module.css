@@ -83,7 +83,7 @@
     /*color: rgba(0, 0, 0, 0.696);*/
     color: rgba(0, 0, 0, 0.696) !important;
 
-    font-size: 4rem;
+    font-size: 4vw;
 
     /*Below Chunk is to bug fix a gltichy hitbox  */
     transform: scale(1.05);
