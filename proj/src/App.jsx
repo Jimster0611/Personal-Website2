@@ -13,13 +13,37 @@ import { SideProjects } from './pages/sideProjects'
 import { Journal } from './pages/journal'
 import { GuestBook } from './pages/guestBook'
 
+import homeBG from "./assets/vids/mainMenuBG.mp4";  
+import aboutBG from "./assets/vids/aboutmeBG.mp4";        
+import sideProjectsBG from "./assets/vids/sideProjBG.mp4"; 
+import journalBG from "./assets/vids/JournalBg2.mp4";      
+import guestBookBG from "./assets/vids/guestBookBg.mp4";  
+ 
+const allVideos = [homeBG, aboutBG, sideProjectsBG, journalBG, guestBookBG];
+const preloadedVideos = []; 
+
+function preloadVideo(src) {
+    const video = document.createElement("video");
+    video.src = src;
+    video.preload = "auto";
+    video.muted = true;
+    video.load(); 
+    preloadedVideos.push(video); 
+}
 function App() {
+
     const [toggled, setToggled] = useState(false);
     
     const audioRef = useRef(new Audio(bgSound));
     
     const hoverAudioRef = useRef(new Audio(hoverSfx));
     const clickAudioRef = useRef(new Audio(clickSfx));
+    
+    useEffect(() => {
+        preloadVideo(homeBG); // will load this b4 the otehrs hoepfully
+        const rest = [aboutBG, sideProjectsBG, journalBG, guestBookBG];
+        rest.forEach(preloadVideo);
+    }, []);
 
     const playHoverSound = () => {
         if (hoverAudioRef.current) {
