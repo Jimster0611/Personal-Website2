@@ -40,6 +40,7 @@ function App() {
     useEffect(() => {
         const song = audioRef.current;
         song.loop = true;
+        song.volume = 0.5;
         (toggled) ? song.play() : song.pause();
     }, [toggled]);
 
