@@ -1,5 +1,5 @@
 import s from './css/App.module.css'
-import { Analytics } from "@vercel/analytics/next"
+
 import { useState, useEffect, useRef } from "react";
 import bgSound from "./assets/audio/bgOST.mp3";
 
