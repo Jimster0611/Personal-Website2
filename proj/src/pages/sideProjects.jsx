@@ -51,7 +51,7 @@ export function SideProjects()
 
     return (
         <div>
-            <video src = {bgVideo} autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
 
 
             <div className = {s.linksContainer}>

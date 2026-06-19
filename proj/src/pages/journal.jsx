@@ -54,7 +54,7 @@ export function Journal()
         
     return (
         <div className = {s.main}>
-            <video src = {bgVideo2} autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo2} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
 
             {/*Below chunk is our buttons section to the left of screen*/}
             <div className={s.buttonsWrapper}>

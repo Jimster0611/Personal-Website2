@@ -38,7 +38,7 @@ export function GuestBook()
 
     return (
         <div className = {s.main}>
-            <video src = {bgVideo1} autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo1} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
             
 
                 

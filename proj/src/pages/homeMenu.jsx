@@ -39,7 +39,7 @@ export function HomeMenu()
 
     return (
         <div className = {s.main}>
-            <video src = {bgVideo} autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
 
             <div className = {s.linksContainer}>
                 <a href= "/My_Resume.pdf"

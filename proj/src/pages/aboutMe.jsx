@@ -39,7 +39,7 @@ export function AboutMe()
 
     return (
         <div className = {s.main}>
-            <video src = {bgVideo1} autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo1} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
             {/*Below will be the link tree nav bar */}
             <div className = {s.linksContainer}>
                 <div className = {s.listHeader} style={{ transform: ' translate(-8%)' }}>
