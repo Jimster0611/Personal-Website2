@@ -13,30 +13,7 @@ import { SideProjects } from './pages/sideProjects'
 import { Journal } from './pages/journal'
 import { GuestBook } from './pages/guestBook'
 
-//below video import chunks
-import homeBG from "./assets/vids/homeBG.mp4";
-import aboutBG from "./assets/vids/aboutmeBG.mp4";
-import sideProjectsBG from "./assets/vids/sideProjectsBG.mp4";
-import journalBG from "./assets/vids/journalBG.mp4";
-import guestBookBG from "./assets/vids/guestBookBG.mp4";
-
-const allVideos = [homeBG, aboutBG, sideProjectsBG, journalBG, guestBookBG];
-
-//added code chunk here
-function preloadVideo(src) {
-    const video = document.createElement("video");
-    video.src = src;
-    video.preload = "auto";
-    video.muted = true;
-    video.load(); // forces the browser to start fetching, even though it's never appended to the DOM
-}
-
 function App() {
-
-    useEffect(() => {
-        allVideos.forEach(preloadVideo);
-    }, []);
-
     const [toggled, setToggled] = useState(false);
     
     const audioRef = useRef(new Audio(bgSound));
