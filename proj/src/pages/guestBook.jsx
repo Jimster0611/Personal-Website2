@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
 import s from '../css/guestBook.module.css'
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect, useLayoutEffect } from "react"
 
 import bgVideo1 from "../assets/vids/guestBookBg.mp4";
 import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
 import clickSfx from "../assets/audio/clickSelectionsfx.mp3";
 import BackButton from '../componets/backButton'
 
+
+import { supabase } from "../api";
 
 export function GuestBook()
 {
@@ -36,10 +38,63 @@ export function GuestBook()
         }
     const clickAudioRef = useRef(new Audio(clickSfx)); 
 
+    //Below chunck is the backend connection to supabase
+    const[users,setUsers] = useState([]);
+    const[user,setUser] = useState({
+        Name: "", Note: ""
+    })
+    console.log(users)
+
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+
+    async function fetchUsers() {
+    const {data} = await supabase
+        .from('users')
+        .select("*")
+        .order('id', { ascending: true });  
+        setUsers(data)
+    }
+    
+    function handleChange(e) {
+        
+    }
     return (
         <div className = {s.main}>
             <video src = {bgVideo1} autoPlay loop muted className = {s.bgVideo}/>
             
+            <input 
+            type="text"
+            placeholder="Name"
+            name="Name (can be anonymous)"
+            onChange={handleChange}
+            />
+
+            <table>
+                <thead>
+                    <tr> 
+                        <th> ID </th>
+                        <th> Name </th>
+                        <th> Age </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {users && users.map((user) => (
+                    <tr 
+                        key={user.id} 
+                        onMouseEnter={() => handleMouseEnter(user.id)} 
+                        onClick={playClickSound}
+                    >
+                        <td>{user.id}</td>
+                        {/* Bracket notation handles spaces & parentheses in JSON keys safely */}
+                        <td>{user["Name (can be anonymous)"] || "Anonymous"}</td>
+                        <td>{user.Notes || "—"}</td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
 
                 
             <BackButton to="/" />
