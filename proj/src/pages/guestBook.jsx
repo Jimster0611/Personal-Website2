@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
 import s from '../css/guestBook.module.css'
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect, useLayoutEffect } from "react"
 
 import bgVideo1 from "../assets/vids/guestBookBg.mp4";
 import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
 import clickSfx from "../assets/audio/clickSelectionsfx.mp3";
 import BackButton from '../componets/backButton'
 
+
+import { supabase } from "../api";
 
 export function GuestBook()
 {
@@ -36,12 +38,122 @@ export function GuestBook()
         }
     const clickAudioRef = useRef(new Audio(clickSfx)); 
 
+    //Below chunck is the backend connection to supabase
+    const[users,setUsers] = useState([]);
+    const [currentUserId, setCurrentUserId] = useState(null);
+    const[user,setUser] = useState({
+        Name: "", Note: ""
+    })
+    console.log(users)
+
+
+    useEffect(() => {
+        initAuth();
+        fetchUsers();
+    }, []);
+
+    async function fetchUsers() {
+    const {data} = await supabase
+        .from('users')
+        .select("*")
+        .order('id', { ascending: true });  
+        setUsers(data)
+    }
+
+    async function initAuth() {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+            setCurrentUserId(session.user.id);
+        } else {
+            const { data, error } = await supabase.auth.signInAnonymously();
+            if (error) {
+                console.log("Anonymous sign-in failed:", error.message);
+            } else {
+                setCurrentUserId(data.user.id);
+            }
+        }
+    }
+    async function deleteUser(userId){
+    const { error } = await supabase
+        .from('users')
+        .delete()
+        .eq('id', userId)
+    
+    if (error) {
+        console.log("Delete failed:", error.message)
+    } else {
+        fetchUsers()
+    }
+    }
+
+    async function createUser(event){
+        event.preventDefault();
+        await supabase
+            .from('users')
+            .insert({ Name: user.Name, Note: user.Note });
+        fetchUsers();
+    }
+
+        function handleChange(event){
+        setUser(prevFormData=>{
+            return{
+            ...prevFormData,
+            [event.target.name]: event.target.value
+            }
+        })
+        }
+
     return (
         <div className = {s.main}>
             <video src = {bgVideo1} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
             
-
+            <form onSubmit= {createUser}>
+                <input 
+                    type="text"
+                    placeholder="Name (can be anonymous)"
+                    name="Name"
+                    onChange={handleChange}
+                />
+                <input 
+                type="text"
+                placeholder="Note"
+                name="Note"
+                onChange={handleChange}
+                />
                 
+                <button type='submit'>Post</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr> 
+                        <th> Post # </th>
+                        <th> Name </th>
+                        <th> Notes </th>
+                        <th> Actions </th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {users && users.map((user) => (
+                    <tr key = {user.id}
+                        onMouseEnter={() => handleMouseEnter(user.id)} 
+                        onClick={playClickSound}
+                    >
+                        <td>{user.id}</td>
+                        <td>{user.Name || "Anonymous"}</td>
+                        <td>{user.Note || "—"}</td>
+                        <td>
+                        {user.user_id === currentUserId && (
+                            <button onClick={() => deleteUser(user.id)}>Delete</button>
+                        )}
+                        </td>                    
+                    </tr>
+                ))}
+                </tbody>
+            </table>
+
             <BackButton to="/" />
         </div>
 
