@@ -90,7 +90,8 @@ export function GuestBook()
         event.preventDefault();
         await supabase
             .from('users')
-            .insert({ Name: user.Name, Note: user.Note });
+            .insert({ Name: user.Name || null, Note: user.Note || null});
+        setUser({ Name: "", Note: "" });
         fetchUsers();
     }
 
@@ -107,52 +108,54 @@ export function GuestBook()
         <div className = {s.main}>
             <video src = {bgVideo1} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
             
-            <form onSubmit= {createUser}>
-                <input 
+            <form className = {s.form} onSubmit= {createUser}>
+                <input className = {s.formInput}
                     type="text"
                     placeholder="Name (can be anonymous)"
                     name="Name"
+                    value={user.Name}
                     onChange={handleChange}
                 />
-                <input 
-                type="text"
-                placeholder="Note"
-                name="Note"
-                onChange={handleChange}
+                <textarea className={s.formInput}
+                    placeholder="Note"
+                    name="Note"
+                    value={user.Note}
+                    onChange={handleChange}
                 />
                 
-                <button type='submit'>Post</button>
+                <button className={s.postButton} type='submit' onMouseEnter={() => handleMouseEnter()}>Post</button>
             </form>
 
-            <table>
-                <thead>
-                    <tr> 
-                        <th> Post # </th>
-                        <th> Name </th>
-                        <th> Notes </th>
-                        <th> Actions </th>
+            <div className = {s.scrollBar }>
+                <table>
+                    <thead>
+                        <tr> 
+                            <th> # </th>
+                            <th> Name </th>
+                            <th> Notes </th>
+                        </tr>
+                    </thead>
+                
 
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {users && users.map((user) => (
-                    <tr key = {user.id}
-                        onMouseEnter={() => handleMouseEnter(user.id)} 
-                        onClick={playClickSound}
-                    >
-                        <td>{user.id}</td>
-                        <td>{user.Name || "Anonymous"}</td>
-                        <td>{user.Note || "—"}</td>
-                        <td>
-                        {user.user_id === currentUserId && (
-                            <button onClick={() => deleteUser(user.id)}>Delete</button>
-                        )}
-                        </td>                    
-                    </tr>
-                ))}
-                </tbody>
-            </table>
+                    <tbody>
+                        {users && users.map((user) => (
+                        <tr key = {user.id}>
+                            <td>{user.id}</td>
+                            <td>{user.Name || "Anonymous"}</td>
+                            <td>{user.Note}</td>
+                            <td className={user.user_id === currentUserId ? s.actionCell : s.actionCellEmpty}>
+                            {user.user_id === currentUserId && (
+                                <button className = {s.deleteButton} 
+                                onMouseEnter={playHoverSound} 
+                                onClick={() => { deleteUser(user.id); playClickSound();}}>
+                                    Delete
+                                </button>)}
+                            </td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
 
             <BackButton to="/" />
         </div>
