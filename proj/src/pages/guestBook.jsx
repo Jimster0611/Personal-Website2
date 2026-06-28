@@ -130,7 +130,7 @@ export function GuestBook()
                 <table>
                     <thead>
                         <tr> 
-                            <th> # </th>
+                            <th> Post </th>
                             <th> Name </th>
                             <th> Notes </th>
                         </tr>
