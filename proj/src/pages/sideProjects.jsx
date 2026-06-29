@@ -68,7 +68,7 @@ export function SideProjects()
                     Personal Website 
                 </Link>
 
-                <Link to="/sideprojects" className = {s.specLinks} style={{ transform: ' translate(8%)' }}
+                <Link to="/sideProj2" className = {s.specLinks} style={{ transform: ' translate(8%)' }}
                     onMouseEnter={() => handleMouseEnter('proj_2')}
                     onMouseLeave={() => setHovered(null)}
                     onClick={playClickSound}>
@@ -77,7 +77,7 @@ export function SideProjects()
                     3d Jave Shooter
                 </Link>
 
-                <Link to="/sideprojects" className = {s.specLinks} style={{ transform: ' translate(16%)' }}
+                <Link to="/sideProj3" className = {s.specLinks} style={{ transform: ' translate(16%)' }}
                     onMouseEnter={() => handleMouseEnter('proj_3')}
                     onMouseLeave={() => setHovered(null)}
                     onClick={playClickSound}>
@@ -85,7 +85,7 @@ export function SideProjects()
                     Fashion
                 </Link>
 
-                <Link to="/sideprojects" className = {s.specLinks} style={{ transform: ' translate(24%)' }}
+                <Link to="/sideProj4" className = {s.specLinks} style={{ transform: ' translate(24%)' }}
                     onMouseEnter={() => handleMouseEnter('proj_4')}
                     onMouseLeave={() => setHovered(null)}
                     onClick={playClickSound}>

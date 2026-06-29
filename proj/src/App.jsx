@@ -12,6 +12,9 @@ import { HomeMenu } from './pages/homeMenu'
 
 import { SideProjects } from './pages/sideProjects'
 import { SideProj1 } from './pages/sideProjects/sideProj1'
+import { SideProj2 } from './pages/sideProjects/sideProj2'
+import { SideProj3 } from './pages/sideProjects/sideProj3'
+import { SideProj4 } from './pages/sideProjects/sideProj4'
 
 import { Journal } from './pages/journal'
 import { GuestBook } from './pages/guestBook'
@@ -90,6 +93,10 @@ function App() {
                 <Route path = "/aboutme" element = {<AboutMe/>}/>
                 <Route path = "/sideprojects" element = {<SideProjects/>}/>
                 <Route path = "/sideProj1" element = {<SideProj1/>}/>
+                <Route path = "/sideProj2" element = {<SideProj2/>}/>
+                <Route path = "/sideProj3" element = {<SideProj3/>}/>
+                <Route path = "/sideProj4" element = {<SideProj4/>}/>
+
                 <Route path="/journal" element={<Journal/>}/> 
                 <Route path="/guestBook" element={<GuestBook/>}/> 
             </Routes>
