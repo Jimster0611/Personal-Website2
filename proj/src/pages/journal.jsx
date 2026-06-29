@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState, useRef } from "react"
 import s from '../css/journal.module.css'
-import bgVideo from "../assets/vids/JournalBg.mp4";
+import bgVideo from "../assets/vids/journalBg.mp4";
 
 import BackButton from '../componets/backButton'
 import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
