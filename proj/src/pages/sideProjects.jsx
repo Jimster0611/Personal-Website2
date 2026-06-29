@@ -59,7 +59,7 @@ export function SideProjects()
                     Projects
                 </div>
                 
-                <Link to="/sideprojects" className = {s.specLinks}
+                <Link to="/sideProj1" className = {s.specLinks}
                     onMouseEnter={() => handleMouseEnter('proj_1')}
                     onMouseLeave={() => setHovered(null)}
                     onClick={playClickSound}>

@@ -1,0 +1,29 @@
+.main {
+    position: relative; /* Essential for the absolute video to stay inside */
+    width: 100%;
+    height: 100vh;
+}
+
+.bgVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Keeps the video aspect ratio perfect */
+    z-index: -10; /* Keeps it behind your text */
+}
+
+
+
+
+/*
+below is code for possible scroll, but scroll exits only vertically/horizontally
+need to make a code for a custom slanted scroll
+    max-height: 60vh;   
+    overflow-y: auto;
+    overflow-x: visible; 
+.linksContainer::-webkit-scrollbar {
+    display: none;
+}
+*/

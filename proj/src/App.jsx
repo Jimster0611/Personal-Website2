@@ -9,15 +9,19 @@ import clickSfx from "./assets/audio/clickSelectionsfx.mp3";
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { AboutMe } from './pages/aboutMe'
 import { HomeMenu } from './pages/homeMenu'
+
 import { SideProjects } from './pages/sideProjects'
+import { SideProj1 } from './pages/sideProjects/sideProj1'
+
 import { Journal } from './pages/journal'
 import { GuestBook } from './pages/guestBook'
 
 import homeBG from "./assets/vids/mainMenuBG.mp4";  
 import aboutBG from "./assets/vids/aboutmeBG.mp4";        
-import sideProjectsBG from "./assets/vids/sideProjBG.mp4"; 
 import journalBG from "./assets/vids/JournalBg2.mp4";      
-import guestBookBG from "./assets/vids/guestBookBg.mp4";  
+import guestBookBG from "./assets/vids/guestBookBg.mp4";
+import sideProjectsBG from "./assets/vids/sideProjBG.mp4"; 
+
  
 const allVideos = [homeBG, aboutBG, sideProjectsBG, journalBG, guestBookBG];
 const preloadedVideos = []; 
@@ -85,6 +89,7 @@ function App() {
                 <Route path = "/" element = {<HomeMenu/>}/>
                 <Route path = "/aboutme" element = {<AboutMe/>}/>
                 <Route path = "/sideprojects" element = {<SideProjects/>}/>
+                <Route path = "/sideProj1" element = {<SideProj1/>}/>
                 <Route path="/journal" element={<Journal/>}/> 
                 <Route path="/guestBook" element={<GuestBook/>}/> 
             </Routes>
