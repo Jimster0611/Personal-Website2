@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useState, useRef } from "react"
 import s from '../../css/sideProjects/sideProj1.module.css'
 import BackButton from '../../componets/backButton'
-import bgVideo from "../../assets/vids/sideProjBG3.mp4";
+import bgVideo from "../../assets/vids/sideProjBG.mp4";
 
 import hoverSfx from "../../assets/audio/hoverOverMenuSelectionsfx.mp3";
 import clickSfx from "../../assets/audio/clickSelectionsfx.mp3";

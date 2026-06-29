@@ -18,7 +18,7 @@ import { GuestBook } from './pages/guestBook'
 
 import homeBG from "./assets/vids/mainMenuBG.mp4";  
 import aboutBG from "./assets/vids/aboutmeBG.mp4";        
-import journalBG from "./assets/vids/JournalBg2.mp4";      
+import journalBG from "./assets/vids/journalBg.mp4";      
 import guestBookBG from "./assets/vids/guestBookBg.mp4";
 import sideProjectsBG from "./assets/vids/sideProjBG.mp4"; 
 

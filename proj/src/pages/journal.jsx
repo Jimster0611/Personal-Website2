@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState, useRef } from "react"
 import s from '../css/journal.module.css'
-import bgVideo2 from "../assets/vids/JournalBg2.mp4";
+import bgVideo from "../assets/vids/JournalBg.mp4";
 
 import BackButton from '../componets/backButton'
 import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
@@ -54,7 +54,7 @@ export function Journal()
         
     return (
         <div className = {s.main}>
-            <video src = {bgVideo2} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
+            <video src = {bgVideo} preload="auto" autoPlay loop muted className = {s.bgVideo}/>
 
             {/*Below chunk is our buttons section to the left of screen*/}
             <div className={s.buttonsWrapper}>
