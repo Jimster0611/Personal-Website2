@@ -23,7 +23,7 @@ export function LoadingScreen()
     }
 
     useEffect(() => {
-        const duration = 3000;
+        const duration = 6000;
         const start = performance.now();
         let frameId;
 
