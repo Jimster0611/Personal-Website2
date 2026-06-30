@@ -1,43 +1,24 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useMemo, useState, useRef, useEffect } from "react";
 import s from '../css/loadingScreen.module.css'
-import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
-import clickSfx from "../assets/audio/clickSelectionsfx.mp3"; 
 
 import bgVideo from "../assets/vids/mainMenuBG.mp4";
+import { useHoverClickSFX } from "../hooks/hover_clickSFX";
 
 export function LoadingScreen()
 {
+
     const [hovered, setHovered] = useState(null)
-    const hoverAudioRef = useRef(new Audio(hoverSfx));
-    const playHoverSound = () => {
-        if (hoverAudioRef.current) {
-            hoverAudioRef.current.currentTime = 0; // Rewind to start so fast hovering works
-            hoverAudioRef.current.volume = 1.0;     // Adjust volume (0.0 to 1.0) to not blast ears
-            hoverAudioRef.current.play().catch(err => {
-                // Audio play can occasionally be blocked by browsers if user hasn't clicked anything yet
-                console.log("Audio play blocked until user interaction.");
-            });
-        }
-    }
-
-    const handleMouseEnter = (projKey) => {
-        setHovered(projKey);
-        playHoverSound(); 
-    }
-    const playClickSound = () => {
-            if (clickAudioRef.current) {
-                clickAudioRef.current.currentTime = 0;
-                clickAudioRef.current.volume = 1.0; 
-                clickAudioRef.current.play().catch(err => console.log("Click audio blocked"));
-            }
-        }
-    const clickAudioRef = useRef(new Audio(clickSfx)); 
-
-    //below chunck is loading screen code
     const [percent, setPercent] = useState(0)
     const [ready, setReady] = useState(false)
     const navigate = useNavigate()
+
+    const { playHoverSound, playClickSound } = useHoverClickSFX();
+
+    const handleMouseEnter = (projKey) => {
+        setHovered(projKey);
+        playHoverSound(); // <-- Works perfectly!
+    }
 
     useEffect(() => {
         const duration = 5000;
