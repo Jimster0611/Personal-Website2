@@ -5,6 +5,8 @@ import s from '../css/loadingScreen.module.css'
 import bgVideo from "../assets/vids/mainMenuBG.mp4";
 import { useHoverClickSFX } from "../hooks/hover_clickSFX";
 
+import Typewriter from 'typewriter-effect';
+
 export function LoadingScreen()
 {
 
@@ -50,7 +52,33 @@ export function LoadingScreen()
     return (
         <div className={s.main} onClick={handleContinue}>
             <div className={s.loader}>
-                <div className={s.label}>LOADING....</div>
+
+                <div className={s.label}>
+                    {!ready ? (
+                        <Typewriter
+                            options={{
+                                strings: ['LOADING...'],
+                                autoStart: true,
+                                loop: true,
+                                delay: 'natural',
+                                cursor: '_'
+                            }}
+                        />
+                    ) : (
+                        <Typewriter
+                            options={{
+                                strings: ['CLICK ANYWHERE'],
+                                autoStart: true,
+                                loop: false, 
+                                delay: 30,   
+                                pauseFor: 3000,
+                                cursor: '_'
+                            }}
+                        />
+                    )}
+                </div>
+
+
                 <div className={s.barOuter}>
                     <div className={s.barInner} style={{ width: `${percent}%` }} />
                 </div>
