@@ -50,7 +50,7 @@ export function LoadingScreen()
     return (
         <div className={s.main} onClick={handleContinue}>
             <div className={s.loader}>
-                <div className={s.label}>LOADING <span className={s.dots}>.....</span></div>
+                <div className={s.label}>LOADING....</div>
                 <div className={s.barOuter}>
                     <div className={s.barInner} style={{ width: `${percent}%` }} />
                 </div>
