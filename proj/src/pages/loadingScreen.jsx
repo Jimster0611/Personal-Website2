@@ -23,7 +23,7 @@ export function LoadingScreen()
     }
 
     useEffect(() => {
-        const duration = 6000;
+        const duration = 5000;
         const start = performance.now();
         let frameId;
 
@@ -60,6 +60,7 @@ export function LoadingScreen()
                                 strings: ['LOADING...'],
                                 autoStart: true,
                                 loop: true,
+                                pauseFor: 2000,
                                 delay: 'natural',
                                 cursor: '_'
                             }}
