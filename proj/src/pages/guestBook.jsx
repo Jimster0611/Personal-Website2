@@ -12,7 +12,7 @@ import { supabase } from "../api";
 export function GuestBook()
 {
     const [hovered, setHovered] = useState(null)
-    const { playHoverSound, playClickSound } = useHoverClickSFX();
+    const { playHoverSound, playClickSound, playNoMaidens } = useHoverClickSFX();
     const handleMouseEnter = (projKey) => {
         setHovered(projKey);
         playHoverSound(); 
@@ -62,7 +62,7 @@ export function GuestBook()
     if (error) {
         console.log("Delete failed:", error.message)
     } else {
-        fetchUsers()
+        fetchUsers();
     }
     }
 
@@ -70,7 +70,7 @@ export function GuestBook()
         event.preventDefault();
         await supabase
             .from('users')
-            .insert({ Name: user.Name || null, Note: user.Note || null});
+            .insert({ Name: user.Name || null, Note: user.Note || null, user_id: currentUserId});
         setUser({ Name: "", Note: "" });
         fetchUsers();
     }
@@ -127,7 +127,7 @@ export function GuestBook()
                             {user.user_id === currentUserId && (
                                 <button className = {s.deleteButton} 
                                 onMouseEnter={playHoverSound} 
-                                onClick={() => { deleteUser(user.id); playClickSound();}}>
+                                onClick={() => { playNoMaidens(); deleteUser(user.id);}}>
                                     Delete
                                 </button>)}
                             </td>
@@ -137,7 +137,7 @@ export function GuestBook()
                 </table>
             </div>
 
-            <BackButton to="/" />
+            <BackButton to="/aboutMe" />
         </div>
 
     )

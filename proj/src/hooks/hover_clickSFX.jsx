@@ -2,10 +2,12 @@
 import { useRef } from "react";
 import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
 import clickSfx from "../assets/audio/clickSelectionsfx.mp3"; 
+import noMaidens from "../assets/audio/maidenlessSFX.mp3"; 
 
 export function useHoverClickSFX() {
     const hoverAudioRef = useRef(new Audio(hoverSfx));
     const clickAudioRef = useRef(new Audio(clickSfx)); 
+    const noMaidensAudioRef = useRef(new Audio(noMaidens)); 
 
     const playHoverSound = () => {
         if (hoverAudioRef.current) {
@@ -23,5 +25,12 @@ export function useHoverClickSFX() {
         }
     }
 
-    return { playHoverSound, playClickSound };
+const playNoMaidens = () => {
+        if (noMaidensAudioRef.current)
+        noMaidensAudioRef.current.currentTime = 0;
+        noMaidensAudioRef.current.volume = 1.0; 
+        noMaidensAudioRef.current.play().catch(err => console.log("Maidenless audio blocked", err));
+    }
+
+    return { playHoverSound, playClickSound, playNoMaidens };
 }
