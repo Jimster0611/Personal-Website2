@@ -9,6 +9,7 @@ import clickSfx from "./assets/audio/clickSelectionsfx.mp3";
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { AboutMe } from './pages/aboutMe'
 import { HomeMenu } from './pages/homeMenu'
+import { LoadingScreen } from './pages/loadingScreen'
 
 import { SideProjects } from './pages/sideProjects'
 import { SideProj1 } from './pages/sideProjects/sideProj1'
@@ -89,7 +90,8 @@ function App() {
             </button>
             
             <Routes>
-                <Route path = "/" element = {<HomeMenu/>}/>
+                <Route path = "/" element = {<LoadingScreen/>}/>
+                <Route path = "/homeMenu" element = {<HomeMenu/>}/>
                 <Route path = "/aboutme" element = {<AboutMe/>}/>
                 <Route path = "/sideprojects" element = {<SideProjects/>}/>
                 <Route path = "/sideProj1" element = {<SideProj1/>}/>
