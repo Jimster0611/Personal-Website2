@@ -23,7 +23,7 @@ export function LoadingScreen()
     }
 
     useEffect(() => {
-        const duration = 5000;
+        const duration = 3000;
         const start = performance.now();
         let frameId;
 
@@ -70,7 +70,7 @@ export function LoadingScreen()
                                 strings: ['CLICK ANYWHERE'],
                                 autoStart: true,
                                 loop: false, 
-                                delay: 30,   
+                                delay: 40,   
                                 pauseFor: 3000,
                                 cursor: '_'
                             }}
