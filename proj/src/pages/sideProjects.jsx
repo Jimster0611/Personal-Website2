@@ -82,7 +82,7 @@ export function SideProjects()
                 )}
             </div>
 
-            <BackButton to="/" />
+            <BackButton to="/homeMenu" />
         </div>
     )
 }

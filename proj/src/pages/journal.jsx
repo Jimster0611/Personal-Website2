@@ -2,10 +2,9 @@ import { Link } from "react-router-dom"
 import { useState, useRef } from "react"
 import s from '../css/journal.module.css'
 import bgVideo from "../assets/vids/journalBg.mp4";
+import { useHoverClickSFX } from "../hooks/hover_clickSFX";
 
 import BackButton from '../componets/backButton'
-import hoverSfx from "../assets/audio/hoverOverMenuSelectionsfx.mp3";
-import clickSfx from "../assets/audio/clickSelectionsfx.mp3"; 
 
 const ENTRIES = {
   0: "The Beginning.",
@@ -25,32 +24,13 @@ export function Journal()
 {
     const [selected, setSelected] = useState("0") 
     const [hovered, setHovered] = useState(null)
-    
-    const hoverAudioRef = useRef(new Audio(hoverSfx));
-    const clickAudioRef = useRef(new Audio(clickSfx)); 
-
-    const playHoverSound = () => {
-        if (hoverAudioRef.current) {
-            hoverAudioRef.current.currentTime = 0; 
-            hoverAudioRef.current.volume = 1.0;     
-            hoverAudioRef.current.play().catch(err => {
-                console.log("Audio play blocked until user interaction.");
-            });
-        }
-    }
+    const { playHoverSound, playClickSound } = useHoverClickSFX();
 
     const handleMouseEnter = (projKey) => {
         setHovered(projKey);
         playHoverSound(); 
     }
 
-    const playClickSound = () => {
-        if (clickAudioRef.current) {
-            clickAudioRef.current.currentTime = 0;
-            clickAudioRef.current.volume = 1.0; 
-            clickAudioRef.current.play().catch(err => console.log("Click audio blocked"));
-        }
-    }
         
     return (
         <div className = {s.main}>
