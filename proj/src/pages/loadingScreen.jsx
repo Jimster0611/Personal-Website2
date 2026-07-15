@@ -68,7 +68,7 @@ export function LoadingScreen()
                     ) : (
                         <Typewriter
                             options={{
-                                strings: ['CLICK ANYWHERE'],
+                                strings: ["CLICK ANYWHERE", "Hi! didn't think you would stick around or maybe you're just afk", "Here's ur prize https://picsum.photos/id/237/200/300"],
                                 autoStart: true,
                                 loop: false, 
                                 delay: 40,   
