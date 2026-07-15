@@ -43,6 +43,8 @@
     height: 2vh;
     border: 0.15vw solid black;
     background: rgba(0, 0, 0, 0.4);
+    border-radius: 999px;
+    overflow: hidden;
 }
 
 .barInner {
